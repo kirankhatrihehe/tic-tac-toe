@@ -1,0 +1,15 @@
+1. What does getCell(int row, int col) return if the coordinates are invalid (like -1, 5)?
+If the coordinates are outside the valid range (0–2), getCell() returns a space character ' '. This is how the function signals that the position doesn’t exist on the board.
+
+2. What does getWinner() return when there is no winner yet?
+If nobody has won yet, getWinner() also returns a space character ' '. It basically means there is no current winner.
+
+3. Why is getWinner() marked const, but makeMove() is not?
+getWinner() is marked const because it only checks the board and doesn’t change anything.
+makeMove() isn’t const because it actually updates the board, changes the current player, and increases the move count.
+
+4. If the board is full but nobody has won, what should isGameOver() return?
+It should return true. Even if there’s no winner, a full board means the game is over and ends in a tie.
+
+5. What does getCurrentPlayer() return at the start of a new game?
+At the start, getCurrentPlayer() returns 'X', since X always plays first in this version of Tic-Tac-Toe.
